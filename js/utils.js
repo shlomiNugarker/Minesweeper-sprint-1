@@ -1,6 +1,5 @@
 'use strict';
 
-
 function buildBoard(size) {
     var board = []
     for (var i = 0; i < size; i++) {
@@ -23,6 +22,7 @@ function renderBoard(mat, selector) {
     for (var i = 0; i < mat.length; i++) {
       strHTML += '<tr>'
       for (var j = 0; j < mat[0].length; j++) {
+        
         var item = CELL
         
         var className = `cell cell-${i}-${j}`;
@@ -67,4 +67,24 @@ function shuffleArray(array) {
   }
       
   return array;
+}
+
+function startStopWatch() {
+  gWatchInterval = setInterval(updateWatch, 1)
+  gStartTime = Date.now()
+}
+
+function updateWatch() {
+  var now = Date.now()
+  var time = ((now - gStartTime) / 1000).toFixed(2)
+  var elTime = document.querySelector('.time')
+  elTime.innerText = time
+}
+
+function endStopWatch() {
+  var end = Date.now()
+  var sumTime = (( end - gStartTime) / 1000).toFixed(2)
+  clearInterval(gWatchInterval)
+  gWatchInterval = null
+  return sumTime
 }

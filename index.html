@@ -10,32 +10,36 @@
 <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
-<body onload="initGame(4)" >
+<body onload="initGame(4, isSevenBoom)">
     <h1>Mine Sweeper</h1>
-    <div>
-       <p class="timer">Time: 00:00</p> 
-       <p class="life">❤️❤️❤️</p>
-    </div>
-   
-   
-  
+    <div class="container">
+        <div>Time: <span class="time"> 0.00</span></div>
+        <div>Best Score: <p class="best-score">0.00</p></div>
+        <div class="details"> 
+            <span class="life">❤️❤️❤️ </span>
+            <span>🚩:<span class="flags"></span></span>
+            <span class="hints" onclick="getHint()">❓❓❓</span>
+        </div>
+        <div>
+            <button class="btn" onclick="showRandCell(gBoard)">Safe Clicks: <span class="num-safe-click">3</span> </button>
+            <button class="btn level" onclick="initGame(4, isSevenBoom)" >Beginner </button>
+            <button class="btn level" onclick="initGame(8, isSevenBoom)">Medium</button>
+            <button class="btn level" onclick="initGame(12, isSevenBoom)">Expert</button> 
+            <button class="btn " onclick="unDo(gLastSteps, gBoard)">Undo</button> 
+            <button class="btn seven-boom" onclick="swichToSevenBoom()">7 Boom !</button>
+        
+        </div>
+        <div>
+            <!-- <button class="btn">Safe Click</button> -->
+            <p class="emoji" onclick="initGame(4)"></p>
+            <!-- <button class="btn">Undo</button> -->
+        </div>
+        <div class="board-container "></div>
+        <div>
+            <p class="msg "></p>
+        </div>
 
-   <div>
-     <button class="btn level" onclick="initGame(4)" >Beginner </button>
-    <button class="btn level" onclick="initGame(8)">Medium</button>
-    <button class="btn level" onclick="initGame(12)">Expert</button>
-      <p class="emoji">😀</p>
-   </div>
-     
-
-    <div class="board-container "></div>
-    
-    
-    <button class="btn restart " onclick="initGame(4)">Play Again</button>
-    <div>
-        <p class="msg "></p>
-    </div>
-
+     </div>
     <script src="js/utils.js"></script>
     <script src="js/game.js"></script>
 </body>

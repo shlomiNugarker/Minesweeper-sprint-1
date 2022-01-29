@@ -1,77 +1,81 @@
 * {
     text-align: center;
-    background-color: rgb(221, 212, 171);
+    /* background-color: rgb(97, 94, 84); */
     box-sizing: border-box;
     font-family: 'Sedgwick Ave', cursive;
-    font-size: 20px;
-   
+    font-size: 15px;
 }
 
 body {
-    font-family: 'Sedgwick Ave', cursive;
+    background-color: rgb(30, 47, 78);
+    color: white;
 }
 
 .board-container {
     margin: auto;
-    display: inline-block;
+    display: inline; 
 }
+
+table {
+    /* background-color: rgba(21, 29, 56, 0.644); */
+    border-radius: 10px;
+    box-shadow: -3px 1px 29px 14px rgba(0, 0, 0, 0.246);
+    /* table-layout: fixed; */
+    margin: auto;
+}
+
+.cell {
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: rgba(180, 207, 221, 0.383);
+    width:30px;
+    height: 30px;
+    transition: background .5s;
+}
+
+
 p {
     margin: 0px;
     display: inline;
 }
 
+.time, .life, .flags{
+    margin: 15px;
+    margin-bottom: 5px;
+}
+
+
+
+.msg {
+    font-size: 25px;
+}
+
 h1 {
     margin: 3px;
-    font-size: 30px;
+    font-size: 35px;
 }
-
-.cell {
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    /* font-size: 1.5em; */
-    cursor: pointer;
-
-    background-color: rgb(140, 173, 189);
-    display:table-cell;
-    width:40px;
-    min-width:40px;
-    transition: background .5s;
-}
-
 .cell:hover {
-    background-color: rgb(184, 208, 221);;
-}
-
-
-table {
-    background-color: rgb(0, 0, 0);
-    border-radius: 5px;
-    box-shadow: -3px 1px 29px 14px rgba(0, 0, 0, 0.246);
-    
-    
+    background-color: rgba(195, 179, 84, 0.623);;
 }
 
 .btn:hover {
     background-color:rgb(224, 139, 79); ;
 }
 
-
 .hidden {
     display: none;
 }
 
-
 .btn {
     font-size: 15px;
-    margin-top: 10pxx;
-    display: block;
+    /* margin-top: 10px; */
     margin: auto;
     border: none;
     padding: 5px;
     border-radius: 3px;
     border: 1px solid;
-    background-color: rgb(219, 158, 114);
+    background-color: rgba(97, 163, 35, 0.465);
     box-shadow: -3px 1px 29px 14px rgba(100, 96, 96, 0.205);
     transition: background .5s;
     cursor: pointer;
@@ -81,11 +85,24 @@ table {
 .level {
     display: inline;
     margin-bottom: 10px;
-    background-color: rgb(195, 178, 165);
+    margin-top: 5px;
+    background-color: rgba(141, 148, 170, 0.452);
 }
 
 .emoji {
-    font-size: 15px;
+    font-size: 25px;
     margin: 5px;
-    display: block;
+    display: inline;
+    cursor: pointer;
+}
+
+.safe-click {
+    background-color: rgba(255, 251, 1, 0.554);
+    transition: all .2s;
+}
+
+.hints {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 3px;
 }
